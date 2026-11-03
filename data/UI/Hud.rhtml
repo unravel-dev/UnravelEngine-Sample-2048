@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>2048 HUD</title>
+    <link type="text/rcss" href="engine:/data/ui/rml.rcss"/>
+    <link type="text/rcss" href="app:/data/UI/Hud.rcss"/>
+</head>
+<body data-model="hud" data-class-ready="ready" data-class-touch="touch">
+    <div id="top-bar">
+        <div id="brand">
+            <div id="logo">2048</div>
+            <div id="tagline">Join the tiles, reach 2048!</div>
+        </div>
+        <div id="scores">
+            <div id="score-box" class="box">
+                <div class="box-label">SCORE</div>
+                <div class="box-value">{{ score | thousands }}</div>
+                <div id="score-delta"></div>
+            </div>
+            <div id="best-box" class="box" data-class-new-best="newBest">
+                <div class="box-label">BEST</div>
+                <div class="box-value">{{ best | thousands }}</div>
+            </div>
+            <button id="new-game" class="action" data-event-click="NewGame()">NEW GAME</button>
+        </div>
+    </div>
+
+    <div id="hint">
+        <span class="keyboard"><span class="key">ARROWS</span> or <span class="key">WASD</span> or </span>swipe to move
+        <span class="keyboard"><span class="gap"></span><span class="key">R</span> restart</span>
+    </div>
+
+    <div id="game-over" class="overlay" data-class-shown="gameOver">
+        <div class="panel">
+            <div class="panel-title">GAME OVER</div>
+            <div class="panel-text">No more moves. You scored</div>
+            <div class="panel-score">{{ score | thousands }}</div>
+            <div class="panel-best" data-if="newBest">NEW BEST!</div>
+            <button id="try-again" class="action wide" data-event-click="NewGame()">TRY AGAIN</button>
+        </div>
+    </div>
+
+    <div id="win" class="overlay" data-class-shown="won">
+        <div class="panel win">
+            <div class="panel-title">YOU MADE 2048!</div>
+            <div class="panel-text">Keep merging for an even bigger tile, or start over.</div>
+            <div class="panel-score">{{ score | thousands }}</div>
+            <div class="panel-buttons">
+                <button id="keep-playing" class="action" data-event-click="KeepPlaying()">KEEP GOING</button>
+                <button id="restart-win" class="action secondary" data-event-click="NewGame()">NEW GAME</button>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

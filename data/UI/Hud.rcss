@@ -1,0 +1,412 @@
+@font-face {
+	font-family: Lilita;
+	src: "app:/data/Fonts/LilitaOne-Regular.ttf";
+}
+
+html, body {
+	width: 100vw;
+	height: 100vh;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body {
+	font-family: Inter;
+	font-size: 16dp;
+	color: #e9e6ff;
+	background-color: rgba(0, 0, 0, 0);
+}
+
+/* ------------------------------------------------------------ intro: everything slides in once ready */
+
+#top-bar, #hint {
+	opacity: 0;
+	transition: opacity 0.6s cubic-out, transform 0.7s back-out;
+}
+
+#top-bar {
+	transform: translateY(-30dp);
+}
+
+#hint {
+	transform: translateY(30dp);
+}
+
+body.ready #top-bar, body.ready #hint {
+	opacity: 1;
+	transform: translateY(0dp);
+}
+
+/* ------------------------------------------------------------ top bar */
+
+#top-bar {
+	position: absolute;
+	left: 4vw;
+	right: 4vw;
+	top: 3.5vh;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: flex-start;
+}
+
+#logo {
+	font-family: Lilita;
+	font-size: 76dp;
+	color: #ffffff;
+	font-effect: glow(3dp 14dp 0dp 0dp #a35cff);
+}
+
+#tagline {
+	font-family: Lilita;
+	font-size: 17dp;
+	color: #b9b0ff;
+	margin-top: -4dp;
+	letter-spacing: 1dp;
+}
+
+#scores {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	gap: 12dp;
+}
+
+.box {
+	position: relative;
+	min-width: 112dp;
+	padding: 8dp 18dp 10dp 18dp;
+	border-radius: 14dp;
+	text-align: center;
+	background-color: rgba(28, 22, 64, 205);
+	border: 2dp rgba(150, 120, 255, 90);
+	box-shadow: 0dp 6dp 18dp 0dp rgba(0, 0, 0, 140);
+}
+
+.box-label {
+	font-family: Lilita;
+	font-size: 14dp;
+	color: #a79cf0;
+	letter-spacing: 2dp;
+}
+
+.box-value {
+	font-family: Lilita;
+	font-size: 30dp;
+	color: #ffffff;
+}
+
+#best-box.new-best {
+	border-color: rgba(255, 200, 90, 220);
+	box-shadow: 0dp 0dp 22dp 2dp rgba(255, 190, 70, 150);
+}
+
+#best-box.new-best .box-value {
+	color: #ffd877;
+}
+
+#score-box {
+	animation: box-bump 0.28s cubic-out;
+}
+
+@keyframes box-bump {
+	0% { transform: scale(1); }
+	35% { transform: scale(1.12); }
+	100% { transform: scale(1); }
+}
+
+#score-delta {
+	position: absolute;
+	left: 0dp;
+	right: 0dp;
+	top: 74dp;
+	text-align: center;
+	font-family: Lilita;
+	font-size: 26dp;
+	color: #ffe27a;
+	font-effect: glow(2dp 8dp 0dp 0dp #ff8a3d);
+	opacity: 0;
+	animation: delta-rise 0.9s cubic-out;
+}
+
+@keyframes delta-rise {
+	0% { opacity: 0; transform: translateY(-14dp) scale(0.7); }
+	15% { opacity: 1; transform: translateY(0dp) scale(1.1); }
+	60% { opacity: 1; transform: translateY(6dp) scale(1); }
+	100% { opacity: 0; transform: translateY(26dp) scale(1); }
+}
+
+/* ------------------------------------------------------------ buttons */
+
+button.action {
+	display: block;
+	padding: 14dp 22dp;
+	border-radius: 14dp;
+	font-family: Lilita;
+	font-size: 19dp;
+	letter-spacing: 1dp;
+	color: #ffffff;
+	text-align: center;
+	decorator: linear-gradient(180deg, #ff6fb8 0%, #b44bff 100%);
+	box-shadow: 0dp 6dp 18dp 0dp rgba(180, 60, 255, 120);
+	transition: transform 0.15s cubic-out;
+}
+
+button.action:hover {
+	transform: scale(1.06);
+	decorator: linear-gradient(180deg, #ff8cc8 0%, #c56bff 100%);
+}
+
+button.action:active {
+	transform: scale(0.96);
+}
+
+button.action.secondary {
+	decorator: linear-gradient(180deg, #5a4fb0 0%, #3a2f86 100%);
+	box-shadow: 0dp 6dp 18dp 0dp rgba(40, 30, 120, 140);
+}
+
+button.action.secondary:hover {
+	decorator: linear-gradient(180deg, #6e62c8 0%, #463a9c 100%);
+}
+
+button.action.wide {
+	width: 220dp;
+	margin: 22dp auto 0dp auto;
+}
+
+/* ------------------------------------------------------------ hint */
+
+#hint {
+	position: absolute;
+	left: 0dp;
+	right: 0dp;
+	bottom: 3.5vh;
+	text-align: center;
+	font-size: 15dp;
+	color: #9e96d6;
+}
+
+.key {
+	font-family: Lilita;
+	color: #ffffff;
+	padding: 2dp 8dp;
+	border-radius: 6dp;
+	background-color: rgba(120, 100, 230, 70);
+}
+
+.gap {
+	display: inline-block;
+	width: 26dp;
+}
+
+/* ------------------------------------------------------------ panels */
+
+.overlay {
+	position: absolute;
+	left: 0dp;
+	top: 0dp;
+	width: 100vw;
+	height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: rgba(8, 4, 24, 150);
+	visibility: hidden;
+	opacity: 0;
+	transition: opacity 0.4s cubic-out;
+}
+
+.overlay.shown {
+	visibility: visible;
+	opacity: 1;
+}
+
+.panel {
+	width: 420dp;
+	padding: 30dp 34dp 32dp 34dp;
+	border-radius: 24dp;
+	text-align: center;
+	decorator: linear-gradient(180deg, rgba(48, 34, 110, 240) 0%, rgba(22, 16, 56, 245) 100%);
+	border: 2dp rgba(170, 130, 255, 140);
+	box-shadow: 0dp 0dp 40dp 4dp rgba(150, 80, 255, 120);
+	transform: scale(0.82) translateY(24dp);
+	transition: transform 0.55s back-out;
+}
+
+.overlay.shown .panel {
+	transform: scale(1) translateY(0dp);
+}
+
+.panel.win {
+	border-color: rgba(255, 210, 110, 200);
+	box-shadow: 0dp 0dp 46dp 6dp rgba(255, 170, 60, 140);
+}
+
+.panel-title {
+	font-family: Lilita;
+	font-size: 46dp;
+	color: #ffffff;
+	font-effect: glow(2dp 12dp 0dp 0dp #b25cff);
+}
+
+.panel.win .panel-title {
+	color: #ffe48a;
+	font-effect: glow(2dp 14dp 0dp 0dp #ff9a3d);
+}
+
+.panel-text {
+	margin-top: 8dp;
+	font-size: 16dp;
+	color: #bdb5f2;
+}
+
+.panel-score {
+	margin-top: 10dp;
+	font-family: Lilita;
+	font-size: 54dp;
+	color: #ffffff;
+}
+
+.panel-best {
+	font-family: Lilita;
+	font-size: 20dp;
+	color: #ffd877;
+	letter-spacing: 2dp;
+}
+
+.panel-buttons {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	gap: 14dp;
+	margin-top: 22dp;
+}
+
+/* ------------------------------------------------------------ touch screens */
+
+/* No keyboard: the hint only tells about the swipe. */
+body.touch .keyboard {
+	display: none;
+}
+
+/* ------------------------------------------------------------ short screens: a phone in landscape */
+
+/* About 830 x 380 dp: the bar takes less of the height, and a panel still fits with its buttons. */
+@media (max-height: 500dp) {
+	#top-bar {
+		left: 4.5vw;
+		right: 4.5vw;
+		top: 2vh;
+	}
+
+	#logo {
+		font-size: 44dp;
+	}
+
+	#tagline {
+		font-size: 12dp;
+		margin-top: -2dp;
+	}
+
+	#scores {
+		gap: 8dp;
+	}
+
+	.box {
+		min-width: 84dp;
+		padding: 4dp 12dp 6dp 12dp;
+		border-radius: 10dp;
+	}
+
+	.box-label {
+		font-size: 10dp;
+	}
+
+	.box-value {
+		font-size: 22dp;
+	}
+
+	#score-delta {
+		top: 50dp;
+		font-size: 20dp;
+	}
+
+	button.action {
+		padding: 11dp 16dp;
+		font-size: 15dp;
+	}
+
+	button.action.wide {
+		width: 180dp;
+		margin-top: 10dp;
+	}
+
+	#hint {
+		bottom: 2vh;
+		font-size: 12dp;
+	}
+
+	.panel {
+		width: 380dp;
+		padding: 14dp 24dp 16dp 24dp;
+	}
+
+	.panel-title {
+		font-size: 30dp;
+	}
+
+	.panel-text {
+		margin-top: 2dp;
+		font-size: 13dp;
+	}
+
+	.panel-score {
+		margin-top: 2dp;
+		font-size: 34dp;
+	}
+
+	.panel-best {
+		font-size: 14dp;
+	}
+
+	.panel-buttons {
+		margin-top: 10dp;
+	}
+}
+
+/* ------------------------------------------------------------ narrow screens: a phone held upright */
+
+@media (max-width: 600dp) {
+	#top-bar {
+		flex-direction: column;
+	}
+
+	#logo {
+		font-size: 52dp;
+	}
+
+	#scores {
+		margin-top: 8dp;
+		gap: 8dp;
+	}
+
+	.box {
+		min-width: 84dp;
+		padding: 5dp 12dp 7dp 12dp;
+	}
+
+	.box-value {
+		font-size: 24dp;
+	}
+
+	button.action {
+		padding: 12dp 14dp;
+		font-size: 15dp;
+	}
+
+	.panel {
+		width: 90vw;
+		padding: 22dp 20dp;
+	}
+}

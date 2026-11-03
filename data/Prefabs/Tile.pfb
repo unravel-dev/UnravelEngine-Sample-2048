@@ -1,0 +1,253 @@
+{
+ "statements": {
+  "overrides": [],
+  "removed_entities": [],
+  "removed_instances": []
+ },
+ "entities": [
+  {
+   "prefab_uid": "acd62b5a-d247-df48-97ce-9020f90e6c9c",
+   "uid": "92e1390e-ecaa-0e4d-aa90-b884a49a651f",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "92e1390e-ecaa-0e4d-aa90-b884a49a651f"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "Tile",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_prefab_id_component": true,
+    "prefab_id_component": {
+     "id": "acd62b5a-d247-df48-97ce-9020f90e6c9c",
+     "document": "51c1ef79-7da8-4544-869c-3c242e95c71a"
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": -1.875,
+       "y": 0.029999999329447748,
+       "z": 1.875
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "prefab_uid": "nil",
+      "uid": "nil"
+     },
+     "children": [
+      {
+       "prefab_uid": "c1aacd18-5401-724e-af84-56567add7559",
+       "uid": "a378f46d-3470-0b45-8af7-07b28fc9548a"
+      },
+      {
+       "prefab_uid": "a446f926-4942-614c-9d80-82576553221b",
+       "uid": "e937e538-d39e-da45-82c3-147735495ff4"
+      }
+     ],
+     "active": true
+    }
+   }
+  },
+  {
+   "prefab_uid": "c1aacd18-5401-724e-af84-56567add7559",
+   "uid": "a378f46d-3470-0b45-8af7-07b28fc9548a",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "a378f46d-3470-0b45-8af7-07b28fc9548a"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "Body",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_prefab_id_component": true,
+    "prefab_id_component": {
+     "id": "c1aacd18-5401-724e-af84-56567add7559",
+     "document": "51c1ef79-7da8-4544-869c-3c242e95c71a"
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.18000000715255738,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 0.0,
+       "y": -0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 0.9454545378684998,
+       "y": 0.3272727131843567,
+       "z": 0.9454545378684998
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "prefab_uid": "acd62b5a-d247-df48-97ce-9020f90e6c9c",
+      "uid": "92e1390e-ecaa-0e4d-aa90-b884a49a651f"
+     },
+     "children": [],
+     "active": true
+    },
+    "has_model_component": true,
+    "model_component": {
+     "enabled": true,
+     "static": true,
+     "casts_shadow": true,
+     "model": {
+      "lods": [
+       {
+        "uid": "3df8a116-a29a-945d-a478-e13ac602e9cd"
+       }
+      ],
+      "materials": [
+       {
+        "uid": "d0519429-63e4-1f4f-8621-a47205d269fc"
+       }
+      ],
+      "material_instances": [],
+      "lod_override_enabled": false,
+      "lod_override_level": 0,
+      "lod_selection_bias": 0.0,
+      "lod_transition_time": {
+       "count": 0.0
+      }
+     }
+    }
+   }
+  },
+  {
+   "prefab_uid": "a446f926-4942-614c-9d80-82576553221b",
+   "uid": "e937e538-d39e-da45-82c3-147735495ff4",
+   "components": {
+    "has_id_component": true,
+    "id_component": {
+     "id": "e937e538-d39e-da45-82c3-147735495ff4"
+    },
+    "has_tag_component": true,
+    "tag_component": {
+     "name": "Label",
+     "tag": ""
+    },
+    "has_layer_component": true,
+    "layer_component": {
+     "layers": {
+      "mask": 1
+     }
+    },
+    "has_prefab_id_component": true,
+    "prefab_id_component": {
+     "id": "a446f926-4942-614c-9d80-82576553221b",
+     "document": "51c1ef79-7da8-4544-869c-3c242e95c71a"
+    },
+    "has_transform_component": true,
+    "transform_component": {
+     "local_transform": {
+      "position": {
+       "x": 0.0,
+       "y": 0.3700000047683716,
+       "z": 0.0
+      },
+      "rotation_euler": {
+       "x": 90.0,
+       "y": 0.0,
+       "z": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0,
+       "z": 1.0
+      },
+      "skew": {
+       "x": 0.0,
+       "y": 0.0,
+       "z": 0.0
+      }
+     },
+     "parent": {
+      "prefab_uid": "acd62b5a-d247-df48-97ce-9020f90e6c9c",
+      "uid": "92e1390e-ecaa-0e4d-aa90-b884a49a651f"
+     },
+     "children": [],
+     "active": true
+    },
+    "has_text_component": true,
+    "text_component": {
+     "text": "2048",
+     "is_rich": false,
+     "font": {
+      "uid": "0e7d3bf1-a342-dc4d-b6b6-4b10b8e849e6"
+     },
+     "font_size": 5,
+     "auto_size": false,
+     "auto_size_range": {
+      "min": 18,
+      "max": 72
+     },
+     "alignment": 18,
+     "overflow": 0,
+     "area": {
+      "width": 1.0,
+      "height": 0.800000011920929
+     },
+     "buffer_type": 1,
+     "style": {
+      "opacity": 1.0,
+      "text_color": 4284902775,
+      "background_color": 0,
+      "foreground_color": 0,
+      "overline_color": 4294967295,
+      "underline_color": 4294967295,
+      "strike_color": 4294967295,
+      "outline_color": 4278190080,
+      "shadow_color": 4278190080,
+      "shadow_softener": 1.0,
+      "shadow_offsets": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "style_flags": 0
+     }
+    }
+   }
+  }
+ ],
+ "version": "1.0.0"
+}
