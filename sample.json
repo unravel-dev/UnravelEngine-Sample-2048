@@ -1,0 +1,15 @@
+{
+  "schema": 1,
+  "title": "2048",
+  "topic": "Casual game",
+  "description": "The sliding tile puzzle on a glowing 3D board: swipe, use the arrow keys or a gamepad to merge tiles up to 2048. Shows input actions with swipes, pooled prefabs, tiles animated by coroutines, a HUD bound to C#, merge sounds pitched by tile value and a best score saved between sessions.",
+  "tags": [
+    "Puzzle",
+    "Mobile",
+    "C# Scripts"
+  ],
+  "icon": "numeric-2-box",
+  "order": 20,
+  "added": "2026-11-03",
+  "thumbnail": "thumbnail.jpg"
+}
